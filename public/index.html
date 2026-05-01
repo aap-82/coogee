@@ -23,6 +23,7 @@ html{scroll-behavior:smooth}
 body{font-family:var(--ff-body);font-size:10pt;line-height:1.5;color:var(--aps-text);background:#efe9e6;background-image:radial-gradient(circle at 20% 10%,rgba(128,0,0,.04),transparent 40%),radial-gradient(circle at 80% 90%,rgba(128,0,0,.05),transparent 50%);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 .page-stack{padding:32px 0 64px}
 .page{background:var(--aps-paper);width:min(900px,calc(100vw - 32px));margin:0 auto 28px;padding:48px 56px 40px;box-shadow:var(--shadow-page);position:relative;break-inside:avoid}
+.page.page-wide{width:calc(100vw - 32px);max-width:none;padding-left:32px;padding-right:32px}
 .page+.page{margin-top:0}
 .page::before{content:"";position:absolute;inset:0;border:1px solid var(--aps-paper-edge);pointer-events:none}
 .page-header,.page-footer{font-family:var(--ff-mono);font-size:8pt;color:var(--aps-mute);letter-spacing:.02em}
@@ -343,6 +344,12 @@ p strong.code-ref{font-weight:700;color:var(--aps-black)}
     width: calc(100vw - 16px);
     padding: 24px 16px 24px;
     margin-bottom: 14px;
+  }
+  /* On mobile, full-width pages collapse to standard mobile sizing */
+  .page.page-wide {
+    width: calc(100vw - 16px);
+    padding-left: 16px;
+    padding-right: 16px;
   }
   
   /* H1 hero — reduce font size */
@@ -1582,7 +1589,7 @@ Refer example photos p 1140792, p1140793 showing an apparent lack of emergency o
     <span>Access Property Services</span><span>23 April 2026</span><span>Building Defects Inspection Report</span>
   </footer>
 </section>
-<section class="page">
+<section class="page page-wide">
   <header class="page-header">
     <span><strong>Access Property Services</strong> · 152 Moverly Road · Cosmetic Defect Register</span>
     <span>23 April 2026</span>
